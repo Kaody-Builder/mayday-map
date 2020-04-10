@@ -1,0 +1,21 @@
+<div class="cov-body row">
+    <div class="col-9 cov-map-frame">
+        <div id="map"
+            leaflet
+            [leafletOptions]="options"
+            (leafletMapReady)="onMapReady($event)"
+            (leafletClick)="addMarker($event)"
+            (leafletMouseMove)="showCoordinates($event)">
+        </div>
+    </div>
+    <div class="col-3 cov-options">
+        <div class="logo p-3 d-flex justify-content-center">
+            <img src="assets/img/logo.png" alt="logo" width="160" height="auto">
+        </div>
+        <form class="form-inline d-flex justify-content-center">
+            <input class="form-control form-control-sm mr-sm-2 formSearch" type="text" placeholder="Taper pour rechercher...">
+            <button class="btn btn-sm btn-search" type="submit">Rechercher</button>
+        </form>
+        <small class="coodonnee">{{ this.coordonnees }}</small>
+    </div>
+</div>
